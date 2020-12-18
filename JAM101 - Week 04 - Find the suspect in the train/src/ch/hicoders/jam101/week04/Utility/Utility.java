@@ -1,4 +1,7 @@
+package ch.hicoders.jam101.week04.Utility;
+
 import java.lang.Math;
+
 public class Utility {
     public static int randomNumber() {
         // Generate the numbers

@@ -1,14 +1,16 @@
+package ch.hicoders.jam101.week01.suspectTrain;
+
+import ch.hicoders.jam101.week04.Utility.Utility;
 import java.util.Scanner;
 
 public class Suspect {
     public static void main(String [] args){
-        int random=Utility.randomNumber();
-        int trial=guessingNumberGame(random);
-        int score=Utility.totalScore(trial);
+        int random= Utility.randomNumber();
+        int remainingTrial=guessingNumberGame(random);
+        int score= Utility.totalScore(remainingTrial);
         System.out.println("Total Score: "+score);
     }
-    public static int guessingNumberGame(int randomNumber)
-    {
+    public static int guessingNumberGame(int randomNumber) {
         // Scanner Class
         Scanner scanner = new Scanner(System.in);
 
@@ -34,8 +36,8 @@ public class Suspect {
             else if (randomNumber < guess) {
                 System.out.println("The number is" + " less than " + guess);
             }
-            if (trial == 0) {
-                System.out.println("You have exhausted" + " K trials.");
+            if (trial == 1) {
+                System.out.println("You have exhausted trials.");
                 System.out.println("The number was " + randomNumber);
             }
         }
