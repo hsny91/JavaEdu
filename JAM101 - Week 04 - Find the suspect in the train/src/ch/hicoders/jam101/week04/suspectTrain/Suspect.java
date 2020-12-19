@@ -1,6 +1,6 @@
-package ch.hicoders.jam101.week01.suspectTrain;
+package ch.hicoders.jam101.week04.suspectTrain;
 
-import ch.hicoders.jam101.week04.Utility.Utility;
+import ch.hicoders.jam101.week04.utility.Utility;
 import java.util.Scanner;
 
 public class Suspect {
@@ -14,12 +14,12 @@ public class Suspect {
         // Scanner Class
         Scanner scanner = new Scanner(System.in);
 
-        // Given K trials
+        // Given trials
         int trial = 4;
         int index, guess;
         System.out.println("A number is chosen" + " between 1 to 10." + "Guess the number" + " within 4 trials.");
 
-        // Interate over K Trials
+        // Interate over  Trials
         for (index = 0; index < 4; index++,trial--) {
 
             System.out.println("Guess the number:");
