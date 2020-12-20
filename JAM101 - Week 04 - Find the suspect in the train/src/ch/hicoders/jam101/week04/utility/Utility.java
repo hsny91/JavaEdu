@@ -1,6 +1,5 @@
 package ch.hicoders.jam101.week04.utility;
 
-import java.lang.Math;
 import java.util.Random;
 
 public class Utility {
