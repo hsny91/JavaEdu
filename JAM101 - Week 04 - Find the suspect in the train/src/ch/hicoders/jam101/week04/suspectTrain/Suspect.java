@@ -31,10 +31,10 @@ public class Suspect {
                 break;
             }
             else if (randomNumber > guess ) {
-                System.out.println("The number is " + "greater than " + guess);
+                System.out.println("The number of vagon is " + "greater than " + guess);
             }
             else if (randomNumber < guess) {
-                System.out.println("The number is" + " less than " + guess);
+                System.out.println("The number of vagon is" + " less than " + guess);
             }
             if (trial == 1) {
                 System.out.println("You have exhausted trials.");
