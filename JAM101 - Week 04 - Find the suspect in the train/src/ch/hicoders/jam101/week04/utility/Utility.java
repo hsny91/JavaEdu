@@ -8,7 +8,7 @@ public class Utility {
     // Generate the numbers
     public static int randomNumber() {
         Random random=new Random();
-        return random.nextInt(10);
+        return random.nextInt(10)+1;
     }
 
     //method calculating the total score
