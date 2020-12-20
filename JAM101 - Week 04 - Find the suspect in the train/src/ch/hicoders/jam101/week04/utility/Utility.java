@@ -1,13 +1,14 @@
 package ch.hicoders.jam101.week04.utility;
 
 import java.lang.Math;
+import java.util.Random;
 
 public class Utility {
 
     // Generate the numbers
     public static int randomNumber() {
-        int number = 1 + (int) (10 * Math.random());
-        return number;
+        Random random=new Random();
+        return random.nextInt(10);
     }
 
     //method calculating the total score
