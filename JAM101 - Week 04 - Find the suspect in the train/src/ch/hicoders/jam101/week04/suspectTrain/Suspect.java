@@ -10,7 +10,7 @@ public class Suspect {
         int score= Utility.totalScore(remainingTrial);
         System.out.println("Total Score: "+score);
     }
-    public static int guessingNumberGame(int randomNumber) {
+    private static int guessingNumberGame(int randomNumber) {
         // Scanner Class
         Scanner scanner = new Scanner(System.in);
 
