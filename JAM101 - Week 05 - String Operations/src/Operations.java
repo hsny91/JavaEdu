@@ -4,6 +4,8 @@ public class Operations {
         doStars(6);
         System.out.println("Prime Numbers: ");
         findPrimeNumber();
+        System.out.println("\n10x10 Matris: ");
+        renderMatris();
     }
     /**
      *  String olarak verilen bir isim ve soyismin sadece bas harflerini Uppercase'e cevirme.
@@ -16,18 +18,22 @@ public class Operations {
         }
         System.out.println(capitalNameSurname);
         return capitalNameSurname;
-    }
+    }/**
+     * 1 den 100 kadar olan sayilari 10x10 seklinde yazdiran fonksiyon
+     * Oncelille 1-100 arasindaki sayilari StringBuild'in(numberList) icinde atiyor.10 ve 10 nun katlarina altsatira
+     * gececek sekilde baska bir stringBuilder'e(totalString) atiyor ve bunu ekrana yazdiriyor.
+     */
     private static void renderMatris(){
-        /*int [] numberList = new int[100];
-        String totalString = "";
+        StringBuilder numberList = new StringBuilder();
+        StringBuilder totalString = new StringBuilder();
         for (int index = 1; index <= 100; index++) {
-            numberList.add(index);
+            numberList.append(index).append(",");
             if (index % 10 == 0) {
-                totalString += numberList.join(",") + "\n";
-                numberList.length = 0;
+                totalString.append(numberList).append("\n") ;
+                numberList.setLength(0);
             }
-        }*/
-        //console.log(totalString);
+        }
+        System.out.println(totalString);
     }
     /**
      * Asal sayilari bulan ve ekrana yazdiran method
@@ -58,6 +64,4 @@ public class Operations {
             System.out.print("\n");
         }
     }
-
-
 }
