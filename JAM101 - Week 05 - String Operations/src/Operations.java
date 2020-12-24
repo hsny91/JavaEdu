@@ -4,11 +4,8 @@ public class Operations {
     public static void main(String[] args){
         convertToUpperCase("asik veysel");
         doStars(6);
-        System.out.println("Prime Numbers: ");
         findPrimeNumber();
-        System.out.println("\n10x10 Matris: ");
         renderMatris();
-        System.out.println("Passwords: ");
         generatePassword();
     }
 
@@ -31,6 +28,7 @@ public class Operations {
      * gececek sekilde baska bir stringBuilder'e(totalString) atiyor ve bunu ekrana yazdiriyor.
      */
     private static void renderMatris(){
+        System.out.println("\n10x10 Matris: ");
         StringBuilder numberList = new StringBuilder();
         StringBuilder totalString = new StringBuilder();
         for (int index = 1; index <= 100; index++) {
@@ -47,6 +45,7 @@ public class Operations {
      * Asal sayilari bulan ve ekrana yazdiran method
      */
     private static void  findPrimeNumber(){
+        System.out.println("Prime Numbers: ");
         int maxBoundary=100;
         for (int primeNumber = 2; primeNumber < maxBoundary; primeNumber++) {
             boolean controlPrime = true;
@@ -71,16 +70,15 @@ public class Operations {
         String specialCharacters = "!@#$";
         String numbers = "1234567890";
         String combinedChars = capitalCaseLetters + lowerCaseLetters + specialCharacters + numbers;
-
+        Random random = new Random();
+        System.out.println("Passwords: ");
         for (int index = 0; index < 50; index++) {
-            Random random = new Random();
             int passwordLength = random.nextInt(8) + 8;
             char[] password = new char[passwordLength];
             password[0] = lowerCaseLetters.charAt(random.nextInt(lowerCaseLetters.length()));
             password[1] = capitalCaseLetters.charAt(random.nextInt(capitalCaseLetters.length()));
             password[2] = specialCharacters.charAt(random.nextInt(specialCharacters.length()));
             password[3] = numbers.charAt(random.nextInt(numbers.length()));
-
             for (int indexPass = 4; indexPass < passwordLength; indexPass++) {
                 password[indexPass] = combinedChars.charAt(random.nextInt(combinedChars.length()));
             }
