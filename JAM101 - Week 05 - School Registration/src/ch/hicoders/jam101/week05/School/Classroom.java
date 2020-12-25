@@ -1,26 +1,25 @@
 package ch.hicoders.jam101.week05.School;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Classroom {
-    public static ArrayList<Student> firstClass;
-    public static ArrayList<Student> secondClass;
-    public static ArrayList<Student> thirdClass;
-    public static ArrayList<Student> fourthClass;
-    public static ArrayList<Student> fifthClass;
+    //classroom clasinda student objesini ve className degiskenini
+    public Student studentList;
+    public  String className;
 
-    public Classroom() {
-        firstClass = new ArrayList<>();
-        secondClass = new ArrayList<>();
-        thirdClass = new ArrayList<>();
-        fourthClass = new ArrayList<>();
-        fifthClass = new ArrayList<>();
+    //constructor
+    public Classroom(String pClassname, Student pStudentList) {
+        this.className=pClassname;
+        this.studentList=pStudentList;
+
+
+
     }
 
 
+
     public static void setStudentData() {
-        Scanner scanner = new Scanner(System.in);
+        /*Scanner scanner = new Scanner(System.in);
         //ArrayList<Student> studentsList = new ArrayList<Student>();
         for (int i = 0; i < 2; i++) {
             System.out.println("Please write student name");
@@ -59,7 +58,7 @@ public class Classroom {
         for(Student student:firstClass)
         {
             System.out.println(student.studentName+" "+student.schoolNo);
-        }
+        }*/
     }
 
 

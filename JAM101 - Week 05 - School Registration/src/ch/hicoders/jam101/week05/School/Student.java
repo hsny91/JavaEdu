@@ -6,7 +6,7 @@ public class Student {
     public int studentAge;
     public String schoolNo;
 
-    public Student(String pStudentName,String PStudentSurName,int pStudentAge,String PSchoolNo){
+    public Student(String pStudentName,String PStudentSurName,int pStudentAge,String PSchoolNo){ ;
         this.studentName=pStudentName;
         this.studentSurName=PStudentSurName;
         this.studentAge=pStudentAge;
