@@ -1,3 +1,4 @@
+
 import java.util.Random;
 
 public class Operations {
@@ -85,15 +86,18 @@ public class Operations {
             System.out.println(password);
         }
     }
+
     /**
      * yildizlar ile dik ucgen cizen method
      */
     private static void doStars(int plenght){
         for (int row= 0; row <= plenght; row++) {
-            for (int column = 0; column < row; column++) {
-                System.out.print("*");
-            }
-            System.out.print("\n");
+                    for (int column = 0; column < row; column++) {
+                         System.out.print("*");
+                      }
+                      System.out.print("\n");
         }
     }
 }
+
+
