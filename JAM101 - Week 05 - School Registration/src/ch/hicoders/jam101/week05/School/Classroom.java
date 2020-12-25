@@ -4,20 +4,21 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Classroom {
-    public static ArrayList<Student> studentsList;
     public static ArrayList<Student> firstClass;
-    public ArrayList<Student> secondClass;
-    public ArrayList<Student> thirdClass;
-    public ArrayList<Student> fourthClass;
-    public ArrayList<Student> fifthClass;
+    public static ArrayList<Student> secondClass;
+    public static ArrayList<Student> thirdClass;
+    public static ArrayList<Student> fourthClass;
+    public static ArrayList<Student> fifthClass;
+
     public Classroom() {
-        studentsList = new ArrayList<>();
         firstClass = new ArrayList<>();
         secondClass = new ArrayList<>();
         thirdClass = new ArrayList<>();
         fourthClass = new ArrayList<>();
         fifthClass = new ArrayList<>();
     }
+
+
     public static void setStudentData() {
         Scanner scanner = new Scanner(System.in);
         //ArrayList<Student> studentsList = new ArrayList<Student>();
@@ -29,16 +30,35 @@ public class Classroom {
             System.out.println("Please write student age");
             int age = scanner.nextInt();
             String schoolNo= name.substring(0,1)+surname.substring(surname.length()-3)+age;
-            Student student = new Student(name, surname, age, schoolNo);
-            studentsList.add(student);
+            if(age==6){
+                Student student = new Student(name, surname, age, schoolNo);
+                firstClass.add(student);
+            }
+            else if(age==7){
+                Student student = new Student(name, surname, age, schoolNo);
+                secondClass.add(student);
+            }
+            else if(age==8){
+                Student student = new Student(name, surname, age, schoolNo);
+                thirdClass.add(student);
+            }
+            else if(age==9){
+                Student student = new Student(name, surname, age, schoolNo);
+                fourthClass.add(student);
+            }
+            else if(age==10){
+                Student student = new Student(name, surname, age, schoolNo);
+                fifthClass.add(student);
+            }
+
         }
 
     }
 
     public static void renderArray(){
-        for(Student student:studentsList)
+        for(Student student:firstClass)
         {
-            System.out.println(student.studentName+student.schoolNo);
+            System.out.println(student.studentName+" "+student.schoolNo);
         }
     }
 
