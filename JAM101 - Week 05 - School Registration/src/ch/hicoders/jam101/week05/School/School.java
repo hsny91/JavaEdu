@@ -17,7 +17,7 @@ public class School {
     public static ArrayList<Student> setStudentData() {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Student> studentsList = new ArrayList<Student>();
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println("Please write student name");
             String name = scanner.next();
             System.out.println("Please write student surname");
