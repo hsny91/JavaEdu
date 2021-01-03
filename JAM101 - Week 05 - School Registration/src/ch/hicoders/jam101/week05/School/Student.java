@@ -6,6 +6,7 @@ public class Student {
     public String studentSurName;
     public int studentAge;
     public String schoolNo;
+    public Student studentList;
 
     public Student(String pStudentName,String PStudentSurName,int pStudentAge,String PSchoolNo){ ;
         this.studentName=pStudentName;
