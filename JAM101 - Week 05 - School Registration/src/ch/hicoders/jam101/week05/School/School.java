@@ -9,8 +9,6 @@ public class School {
     private ArrayList<Student> fourthClass = new ArrayList<>();
     private ArrayList<Student> fifthClass = new ArrayList<>();
 
-
-
     /**
      * Kullanicidan alinan ogrenci bilgileri dogrultusunda 10 tane ogrenci olusturan ve onu arrayliste atan method
      *
