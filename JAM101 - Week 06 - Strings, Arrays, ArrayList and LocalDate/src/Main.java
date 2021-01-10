@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 public class Main {
+
     private static ArrayList<String> bikePartList = new ArrayList<>();
 
     public static void main(String [] args){
@@ -8,7 +9,7 @@ public class Main {
         createResultList();
     }
 
-    private static void addPartInList () {
+    private static void addPartInList() {
         bikePartList.add("tsla342");
         bikePartList.add("vw0929");
         bikePartList.add("tyt567");
@@ -16,12 +17,24 @@ public class Main {
         bikePartList.add("cabrio213");
         bikePartList.add("alfaromeo3234");
     }
+    /**
+     * Butun metodlari cagiran ve ekrana yazdiran Method
+     */
+    private static void createResultList () {
+        bikePartList.stream()
+                .map(Main::convertToUpperCase)
+                .map(Main::reversePartName)
+                .map(Main::addName)
+                .map(Main::dropNumbers)
+                .map(Main::addDate)
+                .forEach(System.out::println);
+    }
 
     /**
      * Parca isimleri büyük harflere cevrilecen Method
      * @return
      */
-    private static String convertToUpperCase (String pPartName) {
+    private static String convertToUpperCase(String pPartName) {
         return pPartName.toUpperCase();
     }
 
@@ -63,16 +76,5 @@ public class Main {
         return pPartName+date.toString();
     }
 
-    /**
-     * Butun metodlari cagiran ve ekrana yazdiran Method
-     */
-    private static void createResultList () {
-        bikePartList.stream()
-                .map(Main::convertToUpperCase)
-                .map(Main::reversePartName)
-                .map(Main::addName)
-                .map(Main::dropNumbers)
-                .map(Main::addDate)
-                .forEach(System.out::println);
-    }
+
 }
