@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-public class Main {
+public class BikePart {
 
     private static ArrayList<String> bikePartList = new ArrayList<>();
 
@@ -22,11 +22,11 @@ public class Main {
      */
     private static void createResultList () {
         bikePartList.stream()
-                .map(Main::convertToUpperCase)
-                .map(Main::reversePartName)
-                .map(Main::addName)
-                .map(Main::dropNumbers)
-                .map(Main::addDate)
+                .map(BikePart::convertToUpperCase)
+                .map(BikePart::reversePartName)
+                .map(BikePart::addName)
+                .map(BikePart::dropNumbers)
+                .map(BikePart::addDate)
                 .forEach(System.out::println);
     }
 
@@ -75,6 +75,5 @@ public class Main {
         LocalDate date = LocalDate.now();
         return pPartName+date.toString();
     }
-
 
 }
