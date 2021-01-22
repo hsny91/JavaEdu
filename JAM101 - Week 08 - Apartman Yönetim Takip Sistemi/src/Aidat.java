@@ -13,4 +13,5 @@ public class Aidat {
         this.mounthNumber=pMounthNumber;
         this.amountOfPaid=pAmountOfPaid;
     }
+
 }
