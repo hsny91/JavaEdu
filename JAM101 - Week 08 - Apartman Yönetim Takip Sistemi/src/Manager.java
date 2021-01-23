@@ -68,7 +68,7 @@ public class Manager {
      * @param pTotalAidat
      * @return
      */
-    private  double findFinancialStatement(double pTotalAidat){
+    private double findFinancialStatement(double pTotalAidat){
         double result=pTotalAidat-totalAidatPrice;
         return round(result);
     }
@@ -78,7 +78,7 @@ public class Manager {
      * @param result
      * @param pNumberDaire
      */
-    private  void showFinancialStatement(double result,int pNumberDaire){
+    private void showFinancialStatement(double result,int pNumberDaire){
         System.out.println(pNumberDaire+". Daire Yil sonu bilancosu: "+result+ " Fr");
 
     }
