@@ -4,17 +4,16 @@ import java.util.Random;
 import static java.lang.StrictMath.round;
 
 public class Manager {
-    private static final double totalAidatPrice=(3000);
-    private static final double maxAidatPrice=750;
+    private static final double totalAidatPrice=(3000);// 12 aylik toplam aidat
+    private static final double maxAidatPrice=750; // 1 ay icin verilecek max aidat
 
     /**
      * Aidatlari olusturan method
      * @return
      */
-    public static ArrayList<Aidat> createAidat() {
+    private  ArrayList<Aidat> createAidat() {
         ArrayList<Aidat> aidatList = new ArrayList<Aidat>();
-        Random random=new Random(); //random sınıfı
-
+        Random random=new Random();
         for (int index = 1; index <= 12; index++) {
             int oneOrZero = (Math.random()>=0.5)? 1 : 0;// aidatin odenip odenmedigi random olarak belirtiliyor.
             if(oneOrZero==1){ //aidat odenmis ise ne kadar odendigi random olarak belirtiliyor.
@@ -23,26 +22,24 @@ public class Manager {
                 aidat.setPaymentStatus(true);
                 aidatList.add(aidat);
             }
-            else{ //aidatin odenmemesi durumdan
+            else{ //aidatin odenmemesi durumda
                 Aidat aidat = new Aidat(index);
                 aidat.setPaymentStatus(false);
                 aidatList.add(aidat);
             }
-
         }
-
         return aidatList;
     }
 
     /**
-     * Daireyi olusturan ve aidatlari icine atan method
+     * Daireleri olusturan ve aidatlari icine atan method
      */
-    public static void createDaire() {
-        for (int index = 1; index <= 3; index++) {
-            ArrayList<Aidat> totalAidatLıst=createAidat();
-            Daire daire = new Daire(totalAidatLıst, index);
-            double totalAidat=findTotalAidat(daire.getDaireList());
-            double financialStatement=findFinancialStatement(totalAidat);
+    private void createDaire() {
+        for (int index = 1; index <= 10; index++) {
+            ArrayList<Aidat> totalAidatList=createAidat();
+            Daire daire = new Daire(totalAidatList, index);
+            double totalAidatPrice=findTotalAidat(daire.getDaireList());
+            double financialStatement=findFinancialStatement(totalAidatPrice);
             showFinancialStatement(financialStatement,daire.getDaireNo());
             /*for (Aidat aidat : daire.getDaireList()) {
                 System.out.println( aidat.mounthNumber+" ay numarasi: "+
@@ -58,7 +55,7 @@ public class Manager {
      * @param pAidatList
      * @return
      */
-    public static double findTotalAidat( ArrayList<Aidat> pAidatList) {
+    private double findTotalAidat( ArrayList<Aidat> pAidatList) {
         double total=0;
         for (Aidat aidat : pAidatList) {
             total+=aidat.amountOfPaid;
@@ -71,7 +68,7 @@ public class Manager {
      * @param pTotalAidat
      * @return
      */
-    public static double findFinancialStatement(double pTotalAidat){
+    private  double findFinancialStatement(double pTotalAidat){
         double result=pTotalAidat-totalAidatPrice;
         return round(result);
     }
@@ -81,7 +78,7 @@ public class Manager {
      * @param result
      * @param pNumberDaire
      */
-    public static void showFinancialStatement(double result,int pNumberDaire){
+    private  void showFinancialStatement(double result,int pNumberDaire){
         System.out.println(pNumberDaire+". Daire Yil sonu bilancosu: "+result+ " Fr");
 
     }
@@ -89,7 +86,7 @@ public class Manager {
     /**
      * Manageri Baslatan method
      */
-    public static void start(){
+    public void start(){
         createDaire();
     }
 }
