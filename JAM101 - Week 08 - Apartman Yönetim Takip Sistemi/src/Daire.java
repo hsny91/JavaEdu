@@ -21,10 +21,12 @@ public class Daire {
     }
 
     public int getDaireNo() {
+
         return daireNo;
     }
 
     public void setDaireNo(int daireNo) {
+
         this.daireNo = daireNo;
     }
 }

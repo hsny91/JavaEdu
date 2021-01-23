@@ -14,4 +14,11 @@ public class Aidat {
         this.amountOfPaid=pAmountOfPaid;
     }
 
+    public Boolean getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(Boolean paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
 }
