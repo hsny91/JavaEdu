@@ -10,7 +10,6 @@ public class OnlineSale {
         addProduct();
         showOrderList();
         showLastStock();
-
     }
 
     /**
@@ -30,6 +29,7 @@ public class OnlineSale {
 
         }
         else{ // stoktan fazla urun istenilirse stokta olan kadar urun verilir
+            System.out.println("********** Yeteri kadar urunumuz yok **********");
             double TotalPrice=orderProduct.stockVolume*(orderProduct.productPrice);
             OrderLine orderLine = new OrderLine(orderProduct,productQuantit,TotalPrice);
             OrderList.add(orderLine);
@@ -88,13 +88,10 @@ public class OnlineSale {
         for(OrderLine order:OrderList){
             System.out.println("Product Name: "+order.getProduct().productName+
                              " Product Price: "+order.getProduct().productPrice+
-                             " Product Stock Volume: "+order.getProduct().stockVolume+
                              " Order Total Price: "+order.getTotalItemPrice() +
                              " Order Quantities: " + order.getProductQuantit()
 
-
             );
-
         }
     }
 }
