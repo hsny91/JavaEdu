@@ -20,9 +20,9 @@ public class Stock {
             int stokVolume=random.nextInt(10) + 1;
             double price=random.nextDouble()*200;   // urunfiyatlari da random olarak olarak atandi.
             Product product = new Product("product"+i, price, stokVolume);
-             getTotalProduct().add(product);
+            totalProduct.add(product);
         }
-        return getTotalProduct();
+        return totalProduct;
 
     }
     private void showProductList(){
