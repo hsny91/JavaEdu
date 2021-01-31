@@ -25,7 +25,8 @@ public class OnlineSale {
             double TotalPrice=productQuantit*(orderProduct.productPrice);
             OrderLine orderLine = new OrderLine(orderProduct,productQuantit,TotalPrice);
             OrderList.add(orderLine);
-            updateStockVolume(randomProductIndex,productQuantit);
+            int lastStockValue= (int) (orderProduct.stockVolume-productQuantit);
+            updateStockVolume(randomProductIndex,lastStockValue);
 
         }
         else{ // stoktan fazla urun istenilirse stokta olan kadar urun verilir
@@ -54,10 +55,21 @@ public class OnlineSale {
         int  productQuantit=random.nextInt(10)+1;
         return productQuantit;
     }
+
+    /**
+     * Stok durumunu guncelleyen method
+     * @param pProductIndex
+     * @param stockQuantite
+     */
     private void updateStockVolume(int pProductIndex,int stockQuantite){
         productArrayList.get(pProductIndex).stockVolume=stockQuantite;
     }
+
+    /**
+     * Stoktaki kalan urunleri gosteren method
+     */
     private void showLastStock(){
+        System.out.println("**********Stocktaki Kalan urunlerimiz**********");
         for(Product product:productArrayList){
             System.out.println("Product name : "+product.productName
                     + " Product Price: " + product.productPrice
@@ -69,14 +81,15 @@ public class OnlineSale {
     }
 
     /**
-     * Siparisleri gosteren liste
+     * Siparisleri gosteren method
      */
     public void showOrderList(){
+        System.out.println("**********Siparislerimiz**********");
         for(OrderLine order:OrderList){
-            System.out.println("Product Name "+order.getProduct().productName+
-                             " Product Price "+order.getProduct().productPrice+
-                             " Product Stock Volume "+order.getProduct().stockVolume+
-                             " Order Total Price : "+order.getTotalItemPrice() +
+            System.out.println("Product Name: "+order.getProduct().productName+
+                             " Product Price: "+order.getProduct().productPrice+
+                             " Product Stock Volume: "+order.getProduct().stockVolume+
+                             " Order Total Price: "+order.getTotalItemPrice() +
                              " Order Quantities: " + order.getProductQuantit()
 
 
